@@ -1,0 +1,21 @@
+{
+  "name": "gameoflife",
+  "version": "1.0.0",
+  "description": "Game of Life kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-register"
+  },
+  "keywords": [
+    "kata"
+  ],
+  "author": "Liam and Shanfan",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
