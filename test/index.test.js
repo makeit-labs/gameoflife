@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {isCellAlive} from '../index';
+import {isCellAlive, neighborsOf} from '../index';
 
 describe('isCellAlive', () => {
   context('given a live cell', () => {
@@ -24,3 +24,19 @@ describe('isCellAlive', () => {
     });
   });
 });
+
+describe('neighborsOf', () => {
+  it('returns neighbors of the cell with (i, j) coordinates', () => {
+    const landscape = [
+      [true, false, true],
+      [true, false, true],
+      [true, false, true],
+      [false, true, false]
+    ];
+    const firstCell = {row: 0, column: 0};
+    const lastCell = {row: 3, column: 2};
+
+    expect(neighborsOf(firstCell, landscape)).to.eql([false, true, false]);
+    expect(neighborsOf(lastCell, landscape)).to.eql([false, true, true]);
+  });
+})
