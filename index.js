@@ -19,3 +19,11 @@ export function neighborsOf({row, column}, landscape) {
   }
   return neighbors;
 }
+
+export function nextGeneration(landscape) {
+  return landscape.map(
+    (row, i) => row.map(
+      (cell, j) => isCellAlive(cell, neighborsOf({row: i, column: j}, landscape))
+    )
+  );
+}

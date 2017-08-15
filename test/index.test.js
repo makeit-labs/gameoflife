@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {isCellAlive, neighborsOf} from '../index';
+import {isCellAlive, neighborsOf, nextGeneration} from '../index';
 
 describe('isCellAlive', () => {
   context('given a live cell', () => {
@@ -39,4 +39,18 @@ describe('neighborsOf', () => {
     expect(neighborsOf(firstCell, landscape)).to.eql([false, true, false]);
     expect(neighborsOf(lastCell, landscape)).to.eql([false, true, true]);
   });
-})
+});
+
+describe('nextGeneration', () => {
+  it('returns the next generation of the landscape', () => {
+    const landscape = [
+      [true, false, true],
+      [true, false, false]
+    ];
+
+    expect(nextGeneration(landscape)).to.eql([
+      [false, true, false],
+      [false, true, false]
+    ]);
+  });
+});
